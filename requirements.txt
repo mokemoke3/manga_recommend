@@ -1,0 +1,6 @@
+gunicorn
+flask
+requests
+gensim
+numpy
+pandas

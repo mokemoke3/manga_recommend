@@ -1,15 +1,18 @@
-<!-- 問題２ -->
 {% extends "layout.html" %}
 {% block content %}
+<head>
+    <link rel=stylesheet href="../static/css/top.css">
+</head>
 <main>
-    <h1 class="content_title">〜 HTML/CSSゼミ 〜</h1>
+    <h1 class="content_title"></h1>
     <div class="content">
-        <h1>台形の面積を計算してみよう</h1>
-        <p class="resizeimage">
-            <img src="../static/images/daikei.jpg" alt="台形" class="sample_image"/>
-        </p>
-        <div class="click_btn">
-            <a href="/calc">Click</a>
+        <div class="imgtxt">
+            <img src="../static/images/meercat_done.png">
+            <p>読んでミーア！</p>
+        </div>
+        <h1 style="text-align: center;">まだ知らない漫画に、出会おう。</h1>
+        <div class="start_btn">
+            <button onclick="location.href='/input'">Start</button>
         </div>
     </div>
 </main>

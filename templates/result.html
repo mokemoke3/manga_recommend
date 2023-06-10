@@ -1,0 +1,485 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+  <link rel=stylesheet href="../static/css/tabs.css">
+</head>
+<main>
+    <div class="content">
+        <h1>こんなマンガはどう？</h1>
+        <form action="/input" method="POST">
+            <div class="tabs">
+                <input id="all" type="radio" name="tab_item" checked>
+                <label class="tab_item" for="all">結果</label>
+                <input id="bm25" type="radio" name="tab_item">
+                <label class="tab_item" for="bm25">しっかり検索</label>
+                <input id="wrd_c" type="radio" name="tab_item">
+                <label class="tab_item" for="wrd_c">ふわっと検索</label>
+                <input id="wrd_i" type="radio" name="tab_item">
+                <label class="tab_item" for="wrd_i">こんなものもあるよ</label>
+                <input id="wrd_r" type="radio" name="tab_item">
+                <label class="tab_item" for="wrd_r">真逆だ！！</label>
+                <div class="tab_content" id="all_content">
+                  <div class="tab_content_description">
+                    <a href={{b_rslt["0"]["url"]}} target="_blank" rel="noopener noreferrer">
+                      <div class="outer1">
+                        {% if b_rslt["0"]["title"] %}
+                        <div class="box">
+                          <h4 class="result">{{b_rslt["0"]["title"]}}</h4>
+                        </div>
+                        <div class="flex">
+                          <img src = {{b_rslt["0"]["image"]}}>
+                          <div class="txt">
+                            <small>ジャンル</small>
+                            <p>{{b_rslt["0"]["genre"][0]}}</p>
+                            <small>作者</small>
+                            <p>{{b_rslt["0"]["author"]}}</p>
+                            <small>あらすじ</small>
+                            <p>{{b_rslt["0"]["synopsis"]}}</p>
+                          </div>
+                        </div>
+                        {% else %}
+                        <h2 class="result">ごめんね。見つけられなかった…</h2>
+                        {% endif %}
+                      </div>
+                    </a>
+                    <a href={{c_rslt["0"]["url"]}} target="_blank" rel="noopener noreferrer">
+                      <div class="outer2">
+                        {% if c_rslt["0"]["title"] %}
+                        <div class="box">
+                          <h4 class="result">{{c_rslt["0"]["title"]}}</h4>
+                        </div>
+                        <div class="flex">
+                          <img src = {{c_rslt["0"]["image"]}}>
+                          <div class="txt">
+                            <small>ジャンル</small>
+                            <p>{{c_rslt["0"]["genre"][0]}}</p>
+                            <small>作者</small>
+                            <p>{{c_rslt["0"]["author"]}}</p>
+                            <small>あらすじ</small>
+                            <p>{{c_rslt["0"]["synopsis"]}}</p>
+                          </div>
+                        </div>
+                        {% else %}
+                        <h2 class="result">ごめんね。見つけられなかった…</h2>
+                        {% endif %}
+                      </div>
+                    </a>
+                    <a href={{i_rslt["0"]["url"]}} target="_blank" rel="noopener noreferrer">
+                      <div class="outer3">
+                        {% if i_rslt["0"]["title"] %}
+                        <div class="box">
+                          <h4 class="result">{{i_rslt["0"]["title"]}}</h4>
+                        </div>
+                        <div class="flex">
+                          <img src = {{i_rslt["0"]["image"]}}>
+                          <div class="txt">
+                            <small>ジャンル</small>
+                            <p>{{i_rslt["0"]["genre"][0]}}</p>
+                            <small>作者</small>
+                            <p>{{i_rslt["0"]["author"]}}</p>
+                            <small>あらすじ</small>
+                            <p>{{i_rslt["0"]["synopsis"]}}</p>
+                          </div>
+                        </div>
+                        {% else %}
+                        <h2 class="result">ごめんね。見つけられなかった…</h2>
+                        {% endif %}
+                      </div>
+                    </a>
+                    <a href={{r_rslt["0"]["url"]}} target="_blank" rel="noopener noreferrer">
+                      <div class="outer4">
+                        {% if r_rslt["0"]["title"] %}
+                        <div class="box">
+                          <h4 class="result">{{r_rslt["0"]["title"]}}</h4>
+                        </div>
+                        <div class="flex">
+                          <img src = {{r_rslt["0"]["image"]}}>
+                          <div class="txt">
+                            <small>ジャンル</small>
+                            <p>{{r_rslt["0"]["genre"][0]}}</p>
+                            <small>作者</small>
+                            <p>{{r_rslt["0"]["author"]}}</p>
+                            <small>あらすじ</small>
+                            <p>{{r_rslt["0"]["synopsis"]}}</p>
+                          </div>
+                        </div>
+                        {% else %}
+                        <h2 class="result">ごめんね。見つけられなかった…</h2>
+                        {% endif %}
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="tab_content" id="bm25_content">
+                  <div class="tab_content_description">
+                    <a href={{b_rslt["0"]["url"]}} target="_blank" rel="noopener noreferrer">
+                      <div class="outer1">
+                        {% if b_rslt["0"]["title"] %}
+                        <div class="box">
+                          <h4 class="result">{{b_rslt["0"]["title"]}}</h4>
+                        </div>
+                        <div class="flex">
+                          <img src = {{b_rslt["0"]["image"]}}>
+                          <div class="txt">
+                            <small>ジャンル</small>
+                            <p>{{b_rslt["0"]["genre"][0]}}</p>
+                            <small>作者</small>
+                            <p>{{b_rslt["0"]["author"]}}</p>
+                            <small>あらすじ</small>
+                            <p>{{b_rslt["0"]["synopsis"]}}</p>
+                          </div>
+                        </div>
+                        {% else %}
+                        <h2 class="result">ごめんね。見つけられなかった…</h2>
+                        {% endif %}
+                      </div>
+                    </a>
+                    <a href={{b_rslt["1"]["url"]}} target="_blank" rel="noopener noreferrer">
+                      <div class="outer2">
+                        {% if b_rslt["1"]["title"] %}
+                        <div class="box">
+                          <h4 class="result">{{b_rslt["1"]["title"]}}</h4>
+                        </div>
+                        <div class="flex">
+                          <img src = {{b_rslt["1"]["image"]}}>
+                          <div class="txt">
+                            <small>ジャンル</small>
+                            <p>{{b_rslt["1"]["genre"][0]}}</p>
+                            <small>作者</small>
+                            <p>{{b_rslt["1"]["author"]}}</p>
+                            <small>あらすじ</small>
+                            <p>{{b_rslt["1"]["synopsis"]}}</p>
+                          </div>
+                        </div>
+                        {% else %}
+                        <h2 class="result">ごめんね。見つけられなかった…</h2>
+                        {% endif %}
+                      </div>
+                    </a>
+                    <a href={{b_rslt["2"]["url"]}} target="_blank" rel="noopener noreferrer">
+                      <div class="outer3">
+                        {% if b_rslt["2"]["title"] %}
+                        <div class="box">
+                          <h4 class="result">{{b_rslt["2"]["title"]}}</h4>
+                        </div>
+                        <div class="flex">
+                          <img src = {{b_rslt["2"]["image"]}}>
+                          <div class="txt">
+                            <small>ジャンル</small>
+                            <p>{{b_rslt["2"]["genre"][0]}}</p>
+                            <small>作者</small>
+                            <p>{{b_rslt["2"]["author"]}}</p>
+                            <small>あらすじ</small>
+                            <p>{{b_rslt["2"]["synopsis"]}}</p>
+                          </div>
+                        </div>
+                        {% else %}
+                        <h2 class="result">ごめんね。見つけられなかった…</h2>
+                        {% endif %}
+                      </div>
+                    </a>
+                    <a href={{b_rslt["3"]["url"]}} target="_blank" rel="noopener noreferrer">
+                      <div class="outer4">
+                        {% if b_rslt["3"]["title"] %}
+                        <div class="box">
+                          <h4 class="result">{{b_rslt["3"]["title"]}}</h4>
+                        </div>
+                        <div class="flex">
+                          <img src = {{b_rslt["3"]["image"]}}>
+                          <div class="txt">
+                            <small>ジャンル</small>
+                            <p>{{b_rslt["3"]["genre"][0]}}</p>
+                            <small>作者</small>
+                            <p>{{b_rslt["3"]["author"]}}</p>
+                            <small>あらすじ</small>
+                            <p>{{b_rslt["3"]["synopsis"]}}</p>
+                          </div>
+                        </div>
+                        {% else %}
+                        <h2 class="result">ごめんね。見つけられなかった…</h2>
+                        {% endif %}
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="tab_content" id="wrd_c_content">
+                  <div class="tab_content_description">
+                    <a href={{c_rslt["0"]["url"]}} target="_blank" rel="noopener noreferrer">
+                      <div class="outer1">
+                        {% if c_rslt["0"]["title"] %}
+                        <div class="box">
+                          <h4 class="result">{{c_rslt["0"]["title"]}}</h4>
+                        </div>
+                        <div class="flex">
+                          <img src = {{c_rslt["0"]["image"]}}>
+                          <div class="txt">
+                            <small>ジャンル</small>
+                            <p>{{c_rslt["0"]["genre"][0]}}</p>
+                            <small>作者</small>
+                            <p>{{c_rslt["0"]["author"]}}</p>
+                            <small>あらすじ</small>
+                            <p>{{c_rslt["0"]["synopsis"]}}</p>
+                          </div>
+                        </div>
+                        {% else %}
+                        <h2 class="result">ごめんね。見つけられなかった…</h2>
+                        {% endif %}
+                      </div>
+                    </a>
+                    <a href={{c_rslt["1"]["url"]}} target="_blank" rel="noopener noreferrer">
+                      <div class="outer2">
+                        {% if c_rslt["1"]["title"] %}
+                        <div class="box">
+                          <h4 class="result">{{c_rslt["1"]["title"]}}</h4>
+                        </div>
+                        <div class="flex">
+                          <img src = {{c_rslt["1"]["image"]}}>
+                          <div class="txt">
+                            <small>ジャンル</small>
+                            <p>{{c_rslt["1"]["genre"][0]}}</p>
+                            <small>作者</small>
+                            <p>{{c_rslt["1"]["author"]}}</p>
+                            <small>あらすじ</small>
+                            <p>{{c_rslt["1"]["synopsis"]}}</p>
+                          </div>
+                        </div>
+                        {% else %}
+                        <h2 class="result">ごめんね。見つけられなかった…</h2>
+                        {% endif %}
+                      </div>
+                    </a>
+                    <a href={{c_rslt["2"]["url"]}} target="_blank" rel="noopener noreferrer">
+                      <div class="outer3">
+                        {% if c_rslt["2"]["title"] %}
+                        <div class="box">
+                          <h4 class="result">{{c_rslt["2"]["title"]}}</h4>
+                        </div>
+                        <div class="flex">
+                          <img src = {{c_rslt["2"]["image"]}}>
+                          <div class="txt">
+                            <small>ジャンル</small>
+                            <p>{{c_rslt["2"]["genre"][0]}}</p>
+                            <small>作者</small>
+                            <p>{{c_rslt["2"]["author"]}}</p>
+                            <small>あらすじ</small>
+                            <p>{{c_rslt["2"]["synopsis"]}}</p>
+                          </div>
+                        </div>
+                        {% else %}
+                        <h2 class="result">ごめんね。見つけられなかった…</h2>
+                        {% endif %}
+                      </div>
+                    </a>
+                    <a href={{c_rslt["3"]["url"]}} target="_blank" rel="noopener noreferrer">
+                      <div class="outer4">
+                        {% if c_rslt["3"]["title"] %}
+                        <div class="box">
+                          <h4 class="result">{{c_rslt["3"]["title"]}}</h4>
+                        </div>
+                        <div class="flex">
+                          <img src = {{c_rslt["3"]["image"]}}>
+                          <div class="txt">
+                            <small>ジャンル</small>
+                            <p>{{c_rslt["3"]["genre"][0]}}</p>
+                            <small>作者</small>
+                            <p>{{c_rslt["3"]["author"]}}</p>
+                            <small>あらすじ</small>
+                            <p>{{c_rslt["3"]["synopsis"]}}</p>
+                          </div>
+                        </div>
+                        {% else %}
+                        <h2 class="result">ごめんね。見つけられなかった…</h2>
+                        {% endif %}
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="tab_content" id="wrd_i_content">
+                  <div class="tab_content_description">
+                    <a href={{i_rslt["0"]["url"]}} target="_blank" rel="noopener noreferrer">
+                      <div class="outer1">
+                        {% if i_rslt["0"]["title"] %}
+                        <div class="box">
+                          <h4 class="result">{{i_rslt["0"]["title"]}}</h4>
+                        </div>
+                        <div class="flex">
+                          <img src = {{i_rslt["0"]["image"]}}>
+                          <div class="txt">
+                            <small>ジャンル</small>
+                            <p>{{i_rslt["0"]["genre"][0]}}</p>
+                            <small>作者</small>
+                            <p>{{i_rslt["0"]["author"]}}</p>
+                            <small>あらすじ</small>
+                            <p>{{i_rslt["0"]["synopsis"]}}</p>
+                          </div>
+                        </div>
+                        {% else %}
+                        <h2 class="result">ごめんね。見つけられなかった…</h2>
+                        {% endif %}
+                      </div>
+                    </a>
+                    <a href={{i_rslt["1"]["url"]}} target="_blank" rel="noopener noreferrer">
+                      <div class="outer2">
+                        {% if i_rslt["1"]["title"] %}
+                        <div class="box">
+                          <h4 class="result">{{i_rslt["1"]["title"]}}</h4>
+                        </div>
+                        <div class="flex">
+                          <img src = {{i_rslt["1"]["image"]}}>
+                          <div class="txt">
+                            <small>ジャンル</small>
+                            <p>{{i_rslt["1"]["genre"][0]}}</p>
+                            <small>作者</small>
+                            <p>{{i_rslt["1"]["author"]}}</p>
+                            <small>あらすじ</small>
+                            <p>{{i_rslt["1"]["synopsis"]}}</p>
+                          </div>
+                        </div>
+                        {% else %}
+                        <h2 class="result">ごめんね。見つけられなかった…</h2>
+                        {% endif %}
+                      </div>
+                    </a>
+                    <a href={{i_rslt["2"]["url"]}} target="_blank" rel="noopener noreferrer">
+                      <div class="outer3">
+                        {% if i_rslt["2"]["title"] %}
+                        <div class="box">
+                          <h4 class="result">{{i_rslt["2"]["title"]}}</h4>
+                        </div>
+                        <div class="flex">
+                          <img src = {{i_rslt["2"]["image"]}}>
+                          <div class="txt">
+                            <small>ジャンル</small>
+                            <p>{{i_rslt["2"]["genre"][0]}}</p>
+                            <small>作者</small>
+                            <p>{{i_rslt["2"]["author"]}}</p>
+                            <small>あらすじ</small>
+                            <p>{{i_rslt["2"]["synopsis"]}}</p>
+                          </div>
+                        </div>
+                        {% else %}
+                        <h2 class="result">ごめんね。見つけられなかった…</h2>
+                        {% endif %}
+                      </div>
+                    </a>
+                    <a href={{i_rslt["3"]["url"]}} target="_blank" rel="noopener noreferrer">
+                      <div class="outer4">
+                        {% if i_rslt["3"]["title"] %}
+                        <div class="box">
+                          <h4 class="result">{{i_rslt["3"]["title"]}}</h4>
+                        </div>
+                        <div class="flex">
+                          <img src = {{i_rslt["3"]["image"]}}>
+                          <div class="txt">
+                            <small>ジャンル</small>
+                            <p>{{i_rslt["3"]["genre"][0]}}</p>
+                            <small>作者</small>
+                            <p>{{i_rslt["3"]["author"]}}</p>
+                            <small>あらすじ</small>
+                            <p>{{i_rslt["3"]["synopsis"]}}</p>
+                          </div>
+                        </div>
+                        {% else %}
+                        <h2 class="result">ごめんね。見つけられなかった…</h2>
+                        {% endif %}
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="tab_content" id="wrd_r_content">
+                    <div class="tab_content_description">
+                      <a href={{r_rslt["0"]["url"]}} target="_blank" rel="noopener noreferrer">
+                        <div class="outer1">
+                          {% if r_rslt["0"]["title"] %}
+                          <div class="box">
+                            <h4 class="result">{{r_rslt["0"]["title"]}}</h4>
+                          </div>
+                          <div class="flex">
+                            <img src = {{r_rslt["0"]["image"]}}>
+                            <div class="txt">
+                              <small>ジャンル</small>
+                              <p>{{r_rslt["0"]["genre"][0]}}</p>
+                              <small>作者</small>
+                              <p>{{r_rslt["0"]["author"]}}</p>
+                              <small>あらすじ</small>
+                              <p>{{r_rslt["0"]["synopsis"]}}</p>
+                            </div>
+                          </div>
+                          {% else %}
+                          <h2 class="result">ごめんね。見つけられなかった…</h2>
+                          {% endif %}
+                        </div>
+                      </a>
+                      <a href={{r_rslt["1"]["url"]}} target="_blank" rel="noopener noreferrer">
+                        <div class="outer2">
+                          {% if r_rslt["1"]["title"] %}
+                          <div class="box">
+                            <h4 class="result">{{r_rslt["1"]["title"]}}</h4>
+                          </div>
+                          <div class="flex">
+                            <img src = {{r_rslt["1"]["image"]}}>
+                            <div class="txt">
+                              <small>ジャンル</small>
+                              <p>{{r_rslt["1"]["genre"][0]}}</p>
+                              <small>作者</small>
+                              <p>{{r_rslt["1"]["author"]}}</p>
+                              <small>あらすじ</small>
+                              <p>{{r_rslt["1"]["synopsis"]}}</p>
+                            </div>
+                          </div>
+                          {% else %}
+                          <h2 class="result">ごめんね。見つけられなかった…</h2>
+                          {% endif %}
+                        </div>
+                      </a>
+                      <a href={{r_rslt["2"]["url"]}} target="_blank" rel="noopener noreferrer">
+                        <div class="outer3">
+                          {% if r_rslt["2"]["title"] %}
+                          <div class="box">
+                            <h4 class="result">{{r_rslt["2"]["title"]}}</h4>
+                          </div>
+                          <div class="flex">
+                            <img src = {{r_rslt["2"]["image"]}}>
+                            <div class="txt">
+                              <small>ジャンル</small>
+                              <p>{{r_rslt["2"]["genre"][0]}}</p>
+                              <small>作者</small>
+                              <p>{{r_rslt["2"]["author"]}}</p>
+                              <small>あらすじ</small>
+                              <p>{{r_rslt["2"]["synopsis"]}}</p>
+                            </div>
+                          </div>
+                          {% else %}
+                          <h2 class="result">ごめんね。見つけられなかった…</h2>
+                          {% endif %}
+                        </div>
+                      </a>
+                      <a href={{r_rslt["3"]["url"]}} target="_blank" rel="noopener noreferrer">
+                        <div class="outer4">
+                          {% if r_rslt["3"]["title"] %}
+                          <div class="box">
+                            <h4 class="result">{{r_rslt["3"]["title"]}}</h4>
+                          </div>
+                          <div class="flex">
+                            <img src = {{r_rslt["3"]["image"]}}>
+                            <div class="txt">
+                              <small>ジャンル</small>
+                              <p>{{r_rslt["3"]["genre"][0]}}</p>
+                              <small>作者</small>
+                              <p>{{r_rslt["3"]["author"]}}</p>
+                              <small>あらすじ</small>
+                              <p>{{r_rslt["3"]["synopsis"]}}</p>
+                            </div>
+                          </div>
+                          {% else %}
+                          <h2 class="result">ごめんね。見つけられなかった…</h2>
+                          {% endif %}
+                        </div>
+                      </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock %}

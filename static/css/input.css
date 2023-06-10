@@ -1,0 +1,71 @@
+textarea.hoge{
+ height: 30em;
+ width: 90%;
+ margin-top: 1em;    /* 上の余白 */
+ display: grid;
+ grid-template-columns: 200px 1fr;
+ 
+ white-space: normal
+}
+form{
+    width: 55%;
+}
+button {
+    display: inline-block;
+    text-decoration: none;
+    width: 300px;
+    height: 100px;
+    padding: 1rem 4rem;
+    font-weight: bold;
+    font-size: 200%;
+    border: 2px solid #5ab4bd;
+    background: #5ab4bd;
+    color: #fff;
+    border-radius: 100vh;
+    transition: 0.5s;
+    margin-top: 20px;    /* 上の余白 */
+}
+button:hover {
+    color: #5ab4bd;
+    background: #fff;
+}
+.botan{
+    text-align: right;
+}
+html{
+    overflow-x: hidden;
+}
+.contents{
+ display: flex;
+ margin-top: 2em;    /* 上の余白 */
+ margin-left: 5em;    /* 左の余白 */
+ flex-wrap: wrap;
+}
+
+.example{
+ width: 40%;
+ align-self: start;
+}
+.attention{
+    width: 35%;
+    align-self: start;
+    margin-top: 2em;    /* 上の余白 */
+}
+.content h1{
+    text-align: center;
+}
+.content{
+ margin-top: 5em;    /* 上の余白 */
+}
+.meer{
+    /*コレ*/display: flex;
+    /*コレ*/justify-content: flex-end;
+    /*コレ*/align-items: flex-end;
+}
+.meer img{
+    height: 20em;
+    margin-right: 2em;
+}
+.space{
+    width: 55%;
+}

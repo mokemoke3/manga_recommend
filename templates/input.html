@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+    <link rel=stylesheet href="../static/css/input.css">
+</head>
+<main>
+    <div class="content">
+        <h1>どんな本が読みたい？</h1>
+        <div class="contents">
+            <form action="/result" method="POST">
+                <p>
+                    <label><h2>思いつく言葉や文章を入れてみよう！</h2>
+                        <textarea name="input" placeholder="今日は○○の日" class="hoge"></textarea>
+                    </label>
+                </p>
+                <div class="botan">
+                    <button>検索</button>
+                </div>                
+            </form>
+            <div class="example">
+                <h4>例</h4>
+                <p>・悪役令嬢もの</p>
+                <p>・胸キュンする</p>
+                <p>・日常系でほっこりする</p>
+            </div>
+            <div class="space"></div>
+            <div class="attention">
+                <h4>⚠注意</h4>
+                <p>検索する文章が長いと検索が終わるまですごく時間がかかっちゃいます。ｺﾞﾒﾝﾈ…</p>
+                <p>2~3単語で10文字くらいがベストかもです。</p>
+            </div>            
+            <div class="meer"><img src="../static/images/meercat_sorry.png"></div>
+        </div>
+    </div>
+</main>
+{% endblock %}

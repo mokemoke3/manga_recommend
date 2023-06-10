@@ -1,6 +1,7 @@
 gunicorn
 flask
 requests
+wheel==0.38.4
 gensim==3.8.3
 numpy
 pandas

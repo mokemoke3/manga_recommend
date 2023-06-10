@@ -1,9 +1,9 @@
 gunicorn
 flask
 requests
+numpy==1.24.3
 wheel==0.38.4
 gensim==3.8.3
-numpy
 pandas
 pot
 mecab-python3

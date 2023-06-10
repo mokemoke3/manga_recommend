@@ -5,7 +5,7 @@ import fasttext
 # import pandas as pd
 import json
 import pickle
-from tqdm import tqdm
+# from tqdm import tqdm
 
 def get_w(text, mt, mdl):
     kws = mt.parse(text).split()

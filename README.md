@@ -76,6 +76,7 @@ git clone https://github.com/mokemoke3/manga_recommend.git
 ```
 
 モデルダウンロード：
+
 https://github.com/mokemoke3/manga_recommend/releases
 
 /manga_recommend　直下に移動

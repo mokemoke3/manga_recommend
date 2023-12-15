@@ -7,7 +7,7 @@ http://ec2-54-249-164-152.ap-northeast-1.compute.amazonaws.com/
 
 # 使い方
 ## 環境：
-- Python 3.8
+- Python 3.9.18
   - gunicorn
   - flask
   - requests
@@ -22,7 +22,35 @@ http://ec2-54-249-164-152.ap-northeast-1.compute.amazonaws.com/
 - MeCab
 
 ## ディレクトリ構成
-
+manga_reccomend
+  ├─data
+  │   ├─all.binaryfile
+  │   ├─all.json
+  │   ├─ids.binaryfile
+  │   ├─norm.binaryfile
+  │   └─vec.binaryfile
+  ├─static
+  │  ├─css
+  │  |  ├─input.css
+  │  |  ├─style.css
+  │  |  ├─tabs.css
+  │  |  └─top.css
+  │  └─images
+  │     ├─logo.png
+  │     ├─manganotana.png
+  │     ├─meercat_done.png
+  │     └─meercat_sorry.png
+  ├─templates
+  │   ├─index.html
+  │   ├─input.html
+  │   ├─layout.html
+  │   ├─noresult.html
+  │   └─result.html
+  ├─app.py
+  ├─recommend.py
+  ├─requirements.txt
+  ├─vec.py
+  └─wiki_comic.bin
 
 ## MeCabの設定
 

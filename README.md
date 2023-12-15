@@ -24,66 +24,50 @@ http://ec2-54-249-164-152.ap-northeast-1.compute.amazonaws.com/
 ## ディレクトリ構成
 manga_reccomend
 
-  ├─data
-  
-  │   ├─all.binaryfile
-  
-  │   ├─all.json
-  
-  │   ├─ids.binaryfile
-  
-  │   ├─norm.binaryfile
-  
-  │   └─vec.binaryfile
-  
-  ├─static
-  
-  │  ├─css
-  
-  │  |  ├─input.css
-  
-  │  |  ├─style.css
-  
-  │  |  ├─tabs.css
-  
-  │  |  └─top.css
-  
-  │  └─images
-  
-  │     ├─logo.png
-  
-  │     ├─manganotana.png
-  
-  │     ├─meercat_done.png
-  
-  │     └─meercat_sorry.png
-  
-  ├─templates
-  
-  │   ├─index.html
-  
-  │   ├─input.html
-  
-  │   ├─layout.html
-  
-  │   ├─noresult.html
-  
-  │   └─result.html
-  
-  ├─app.py
-  
-  ├─recommend.py
-  
-  ├─requirements.txt
-  
-  ├─vec.py
-  
-  └─wiki_comic.bin
+    ├─data    
+    │     ├─all.binaryfile    
+    │     ├─all.json    
+    │     ├─ids.binaryfile    
+    │     ├─norm.binaryfile    
+    │     └─vec.binaryfile    
+    ├─static    
+    │    ├─css    
+    │    |    ├─input.css    
+    │    |    ├─style.css    
+    │    |    ├─tabs.css    
+    │    |    └─top.css    
+    │    └─images    
+    │       ├─logo.png    
+    │       ├─manganotana.png
+    │       ├─meercat_done.png
+    │       └─meercat_sorry.png
+    ├─templates
+    │     ├─index.html
+    │     ├─input.html
+    │     ├─layout.html
+    │     ├─noresult.html
+    │     └─result.html
+    ├─app.py
+    ├─recommend.py
+    ├─requirements.txt
+    ├─vec.py
+    └─wiki_comic.bin
   
 
 ## MeCabの設定
-
-
+```bash
+apt-get -y update && \
+apt-get -y upgrade && \
+apt-get install -y mecab && \
+apt-get install -y libmecab-dev && \
+apt-get install -y mecab-ipadic-utf8 && \
+apt-get install -y git && \
+apt-get install -y make && \
+apt-get install -y curl && \
+apt-get install -y xz-utils && \
+apt-get install -y file && \
+apt-get install -y sudo
+```
 
 ## フォルダの設定
 本リポジトリのクローン：

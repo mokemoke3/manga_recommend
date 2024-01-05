@@ -1,5 +1,5 @@
 textarea.hoge{
- height: 30em;
+ height: 20em;
  width: 90%;
  margin-top: 1em;    /* 上の余白 */
  display: grid;
@@ -58,9 +58,9 @@ html{
  margin-top: 5em;    /* 上の余白 */
 }
 .meer{
-    /*コレ*/display: flex;
-    /*コレ*/justify-content: flex-end;
-    /*コレ*/align-items: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 .meer img{
     height: 20em;

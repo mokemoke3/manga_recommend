@@ -8,13 +8,13 @@ import json
 
 class recommend:
 
-    def __init__(self) -> None:
+    def __init__(self) -> None: 
         pass
     
     # 初期化 MeCabのTagger設定、モデルのロード
     def __init__(self):
         self.model = ft.load_model("./wiki_comic.bin")
-        self.tagger = MeCab.Tagger('-Owakati -d "C:/Program Files (x86)/MeCab/dic/ipadic" -u "C:/Program Files (x86)/MeCab/dic/ipadic/neologd.dic"')
+        self.tagger = MeCab.Tagger('-Owakati')
         self.ids = load_pickle("./data/ids.binaryfile")
         self.json = load_json("./data/all.json")
         bm = best_match()
@@ -38,8 +38,10 @@ class recommend:
     # 上位4件のデータ取得
     def rank(self, data, d_a):
         sort = np.argsort(data)
+        # 降順に並び替え
         if d_a == "d":
             result = sort[-4:]
+        # 昇順に並び替え
         elif d_a == "a":
             result = sort[:4]
         r_4 = {}
@@ -61,13 +63,9 @@ class recommend:
 class best_match:
 
     def __init__(self):
-        self.tagger = MeCab.Tagger('-Owakati -d "C:/Program Files (x86)/MeCab/dic/ipadic" -u "C:/Program Files (x86)/MeCab/dic/ipadic/neologd.dic"')
-
+        self.tagger = MeCab.Tagger('-Owakati')
     #前処理
     def pre_process(self):
-        # self.ids = ids
-        # self.docs = docs
-        # corpus = [self.wakachi(doc) for doc in self.docs]
         self.docs = load_pickle("./data/all.binaryfile")
         self.bm25_ = BM25(self.docs)
     
@@ -115,15 +113,12 @@ class Word_Rotators:
     def calc(self):
         result_c = []
         result_i = []
-        result_r = []
         for j, w1 in enumerate(self.w1):
             w2 = self.get_w()
             z2 = self.get_z(w2)
             m2 = [np.linalg.norm(w2_i) / z2 for w2_i in w2]
             c = []
             i = []
-            r = []
-            # cos = []
             for w1_i in w1:
                 cos = [self.cos_sim(np.array(w1_i), np.array(w2_j)) for w2_j in w2]
                 c.append([1 - sim for sim in cos])

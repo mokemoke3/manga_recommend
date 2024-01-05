@@ -8,3 +8,4 @@ pandas
 pot
 mecab-python3
 fasttext
+pickle
